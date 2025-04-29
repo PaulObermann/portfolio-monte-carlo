@@ -5,7 +5,6 @@ import matplotlib.pyplot as plt
 import random
 
 st.set_page_config(page_title="Investment Simulation", layout="wide")
-
 st.title("Investment Growth Simulation")
 
 # Sidebar for parameters
@@ -57,7 +56,7 @@ if st.sidebar.button("Run Simulation"):
         "Standard Deviation": [finalmoney.std()],
         "Minimum": [finalmoney.min()],
         "Maximum": [finalmoney.max()]
-    }).T)
+    }).rename(columns={'0': 'Value'}).T)
 
 else:
     st.info("👈 Adjust settings in the sidebar and click 'Run Simulation'!")
